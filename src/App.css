@@ -1,0 +1,14 @@
+#root {
+  background: url("src/assets/images/bg-stars.svg"),
+    url("src/assets/images/pattern-hills.svg");
+  background-color: hsl(235, 16%, 14%);
+  background-repeat: no-repeat;
+  background-size: auto, 300%;
+  background-position: center, right bottom;
+}
+
+@media screen and (width > 1024px) {
+  #root {
+    background-size: auto, 150%;
+  }
+}

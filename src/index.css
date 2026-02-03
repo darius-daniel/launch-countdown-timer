@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+body {
+  font-size: 14px;
+}
+
+@theme {
+  --font-red-hat-text: "Red Hat Text";
+
+  --color-blue-*: initial;
+  --color-blue-100: hsl(237, 18%, 59%);
+  --color-blue-200: hsl(236, 21%, 26%);
+  --color-blue-300: hsl(235, 16%, 14%);
+  --color-blue-400: hsl(234, 17%, 12%);
+  --color-soft-red: hsl(345, 95%, 68%);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: absolute;
+  bottom: 16px;
+  width: 100vw;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
