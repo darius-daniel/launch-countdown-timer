@@ -1,10 +1,88 @@
 #root {
-  background: url("src/assets/images/bg-stars.svg"),
+  background:
+    url("src/assets/images/bg-stars.svg"),
     url("src/assets/images/pattern-hills.svg");
   background-color: hsl(235, 16%, 14%);
   background-repeat: no-repeat;
   background-size: auto, 300%;
-  background-position: center, right bottom;
+  background-position:
+    center,
+    right bottom;
+}
+
+.time-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.time-card-inner {
+  position: relative;
+  width: clamp(60px, 17vw, 80px);
+  aspect-ratio: 3 / 4;
+  border-radius: 0.75rem;
+  background: var(--color-blue-200);
+  box-shadow: 0 10px 0 var(--color-blue-400);
+  overflow: hidden;
+  perspective: 1000px;
+}
+
+.time-card-inner::before,
+.time-card-inner::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 12px;
+  border-radius: 50%;
+  background: var(--color-blue-300);
+  transform: translateY(-50%);
+}
+
+.time-card-inner::after {
+  right: -6px;
+}
+
+.flip-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-soft-red);
+  font-weight: 700;
+  font-size: clamp(28px, 8vw, 40px);
+  line-height: 1;
+  background: linear-gradient(
+    to bottom,
+    hsl(235, 20%, 30%),
+    hsl(235, 21%, 20%)
+  );
+  transform-origin: bottom;
+  transition: transform 0.6s ease-in-out;
+}
+
+.flip-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.45);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.flip-card.flipping {
+  transform: rotateY(180deg);
+}
+
+.time-card-label {
+  font-size: clamp(9px, 2.5vw, 12px);
+  letter-spacing: 0.3em;
+  color: var(--color-blue-100);
+  text-transform: uppercase;
 }
 
 @media screen and (width > 1024px) {
